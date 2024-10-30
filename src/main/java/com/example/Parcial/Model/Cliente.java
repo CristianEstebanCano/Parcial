@@ -1,27 +1,34 @@
 package com.example.Parcial.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "clientes")
 public class Cliente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idCliente;
+    @Column(name = "ID_Cliente", columnDefinition = "INT(11)")
+    private Integer idCliente;
+
+    @Column(name = "Nombre", length = 100)
     private String nombre;
+
+    @Column(name = "Apellido", length = 100)
     private String apellido;
+
+    @Column(name = "Direccion", length = 255)
     private String direccion;
+
+    @Column(name = "Telefono", length = 20)
     private String telefono;
+
+    @Column(name = "Email", length = 100)
     private String email;
 
-    // Constructor vacío
     public Cliente() {}
 
-    // Constructor lleno
-    public Cliente(Long idCliente, String nombre, String apellido, String direccion, String telefono, String email) {
+    public Cliente(Integer idCliente, String nombre, String apellido, String direccion, String telefono, String email) {
         this.idCliente = idCliente;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -30,9 +37,8 @@ public class Cliente {
         this.email = email;
     }
 
-    // Getters y Setters
-    public Long getIdCliente() { return idCliente; }
-    public void setIdCliente(Long idCliente) { this.idCliente = idCliente; }
+    public Integer getIdCliente() { return idCliente; }
+    public void setIdCliente(Integer idCliente) { this.idCliente = idCliente; }
     public String getNombre() { return nombre; }
     public void setNombre(String nombre) { this.nombre = nombre; }
     public String getApellido() { return apellido; }
@@ -44,7 +50,6 @@ public class Cliente {
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
 
-    // toString
     @Override
     public String toString() {
         return "Cliente{" +

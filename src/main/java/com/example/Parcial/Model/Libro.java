@@ -4,29 +4,37 @@ import jakarta.persistence.*;
 import java.io.Serializable;
 
 @Entity
+@Table(name = "libros")
 public class Libro implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idLibro;
+    @Column(name = "ID_Libro", columnDefinition = "INT(11)")
+    private Integer idLibro;
+
+    @Column(name = "Titulo", length = 255)
     private String titulo;
+
+    @Column(name = "Año_Publicacion", columnDefinition = "INT(11)")
     private Integer añoPublicacion;
+
+    @Column(name = "ISBN", length = 20)
     private String isbn;
+
+    @Column(name = "Disponibilidad", columnDefinition = "TINYINT(1)")
     private Boolean disponibilidad;
 
     @ManyToOne
-    @JoinColumn(name = "autor_id")
+    @JoinColumn(name = "Autor_ID", columnDefinition = "INT(11)")
     private Autor autor;
 
     @ManyToOne
-    @JoinColumn(name = "genero_id")
+    @JoinColumn(name = "Genero_ID", columnDefinition = "INT(11)")
     private Genero genero;
 
-    // Constructor vacío
     public Libro() {}
 
-    // Constructor lleno
-    public Libro(Long idLibro, String titulo, Integer añoPublicacion, String isbn, Boolean disponibilidad, Autor autor, Genero genero) {
+    public Libro(Integer idLibro, String titulo, Integer añoPublicacion, String isbn, Boolean disponibilidad, Autor autor, Genero genero) {
         this.idLibro = idLibro;
         this.titulo = titulo;
         this.añoPublicacion = añoPublicacion;
@@ -36,9 +44,8 @@ public class Libro implements Serializable {
         this.genero = genero;
     }
 
-    // Getters y Setters
-    public Long getIdLibro() { return idLibro; }
-    public void setIdLibro(Long idLibro) { this.idLibro = idLibro; }
+    public Integer getIdLibro() { return idLibro; }
+    public void setIdLibro(Integer idLibro) { this.idLibro = idLibro; }
     public String getTitulo() { return titulo; }
     public void setTitulo(String titulo) { this.titulo = titulo; }
     public Integer getAñoPublicacion() { return añoPublicacion; }
@@ -52,7 +59,6 @@ public class Libro implements Serializable {
     public Genero getGenero() { return genero; }
     public void setGenero(Genero genero) { this.genero = genero; }
 
-    // toString
     @Override
     public String toString() {
         return "Libro{" +

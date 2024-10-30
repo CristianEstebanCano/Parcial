@@ -4,27 +4,33 @@ import jakarta.persistence.*;
 import java.util.Date;
 
 @Entity
+@Table(name = "prestamos")
 public class Prestamo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idPrestamo;
+    @Column(name = "ID_Prestamo", columnDefinition = "INT(11)")
+    private Integer idPrestamo;
+
+    @Column(name = "Fecha_Prestamo")
+    @Temporal(TemporalType.DATE)
     private Date fechaPrestamo;
+
+    @Column(name = "Fecha_Devolucion")
+    @Temporal(TemporalType.DATE)
     private Date fechaDevolucion;
 
     @ManyToOne
-    @JoinColumn(name = "libro_id")
+    @JoinColumn(name = "ID_Libro", columnDefinition = "INT(11)")
     private Libro libro;
 
     @ManyToOne
-    @JoinColumn(name = "cliente_id")
+    @JoinColumn(name = "ID_Cliente", columnDefinition = "INT(11)")
     private Cliente cliente;
 
-    // Constructor vacío
     public Prestamo() {}
 
-    // Constructor lleno
-    public Prestamo(Long idPrestamo, Date fechaPrestamo, Date fechaDevolucion, Libro libro, Cliente cliente) {
+    public Prestamo(Integer idPrestamo, Date fechaPrestamo, Date fechaDevolucion, Libro libro, Cliente cliente) {
         this.idPrestamo = idPrestamo;
         this.fechaPrestamo = fechaPrestamo;
         this.fechaDevolucion = fechaDevolucion;
@@ -32,9 +38,8 @@ public class Prestamo {
         this.cliente = cliente;
     }
 
-    // Getters y Setters
-    public Long getIdPrestamo() { return idPrestamo; }
-    public void setIdPrestamo(Long idPrestamo) { this.idPrestamo = idPrestamo; }
+    public Integer getIdPrestamo() { return idPrestamo; }
+    public void setIdPrestamo(Integer idPrestamo) { this.idPrestamo = idPrestamo; }
     public Date getFechaPrestamo() { return fechaPrestamo; }
     public void setFechaPrestamo(Date fechaPrestamo) { this.fechaPrestamo = fechaPrestamo; }
     public Date getFechaDevolucion() { return fechaDevolucion; }
@@ -44,7 +49,6 @@ public class Prestamo {
     public Cliente getCliente() { return cliente; }
     public void setCliente(Cliente cliente) { this.cliente = cliente; }
 
-    // toString
     @Override
     public String toString() {
         return "Prestamo{" +

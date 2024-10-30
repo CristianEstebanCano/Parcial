@@ -5,22 +5,32 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+import jakarta.persistence.*;
+
 @Entity
+@Table(name = "autores")
 public class Autor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idAutor;
+    @Column(name = "ID_Autor", columnDefinition = "INT(11)")
+    private Integer idAutor;
+
+    @Column(name = "Nombre", length = 100)
     private String nombre;
+
+    @Column(name = "Apellido", length = 100)
     private String apellido;
+
+    @Column(name = "Nacionalidad", length = 100)
     private String nacionalidad;
+
+    @Column(name = "Año_Nacimiento", columnDefinition = "INT(11)")
     private Integer añoNacimiento;
 
-    // Constructor vacío
     public Autor() {}
 
-    // Constructor lleno
-    public Autor(Long idAutor, String nombre, String apellido, String nacionalidad, Integer añoNacimiento) {
+    public Autor(Integer idAutor, String nombre, String apellido, String nacionalidad, Integer añoNacimiento) {
         this.idAutor = idAutor;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -28,9 +38,8 @@ public class Autor {
         this.añoNacimiento = añoNacimiento;
     }
 
-    // Getters y Setters
-    public Long getIdAutor() { return idAutor; }
-    public void setIdAutor(Long idAutor) { this.idAutor = idAutor; }
+    public Integer getIdAutor() { return idAutor; }
+    public void setIdAutor(Integer idAutor) { this.idAutor = idAutor; }
     public String getNombre() { return nombre; }
     public void setNombre(String nombre) { this.nombre = nombre; }
     public String getApellido() { return apellido; }
@@ -40,7 +49,6 @@ public class Autor {
     public Integer getAñoNacimiento() { return añoNacimiento; }
     public void setAñoNacimiento(Integer añoNacimiento) { this.añoNacimiento = añoNacimiento; }
 
-    // toString
     @Override
     public String toString() {
         return "Autor{" +

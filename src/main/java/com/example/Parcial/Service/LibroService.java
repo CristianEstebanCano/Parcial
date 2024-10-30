@@ -27,7 +27,7 @@ public class LibroService {
 
     public Libro actualizar(Long id, Libro libro) {
         if (libroRepository.existsById(id)) {
-            libro.setIdLibro(id);
+            libro.setIdLibro(id.intValue());
             return libroRepository.save(libro);
         }
         return null;

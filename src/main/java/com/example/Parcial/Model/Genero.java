@@ -1,34 +1,31 @@
 package com.example.Parcial.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "generos")
 public class Genero {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idGenero;
+    @Column(name = "ID_Genero", columnDefinition = "INT(11)")
+    private Integer idGenero;
+
+    @Column(name = "Nombre_Genero", length = 100)
     private String nombreGenero;
 
-    // Constructor vacío
     public Genero() {}
 
-    // Constructor lleno
-    public Genero(Long idGenero, String nombreGenero) {
+    public Genero(Integer idGenero, String nombreGenero) {
         this.idGenero = idGenero;
         this.nombreGenero = nombreGenero;
     }
 
-    // Getters y Setters
-    public Long getIdGenero() { return idGenero; }
-    public void setIdGenero(Long idGenero) { this.idGenero = idGenero; }
+    public Integer getIdGenero() { return idGenero; }
+    public void setIdGenero(Integer idGenero) { this.idGenero = idGenero; }
     public String getNombreGenero() { return nombreGenero; }
     public void setNombreGenero(String nombreGenero) { this.nombreGenero = nombreGenero; }
 
-    // toString
     @Override
     public String toString() {
         return "Genero{" +

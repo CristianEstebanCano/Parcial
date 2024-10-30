@@ -27,7 +27,7 @@ public class AutorService {
 
     public Autor actualizar(Long id, Autor autor) {
         if (autorRepository.existsById(id)) {
-            autor.setIdAutor(id);
+            autor.setIdAutor(id.intValue());
             return autorRepository.save(autor);
         }
         return null;

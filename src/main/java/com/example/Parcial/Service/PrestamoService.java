@@ -27,7 +27,7 @@ public class PrestamoService {
 
     public Prestamo actualizar(Long id, Prestamo prestamo) {
         if (prestamoRepository.existsById(id)) {
-            prestamo.setIdPrestamo(id);
+            prestamo.setIdPrestamo(id.intValue());
             return prestamoRepository.save(prestamo);
         }
         return null;

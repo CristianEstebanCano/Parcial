@@ -27,7 +27,7 @@ public class GeneroService {
 
     public Genero actualizar(Long id, Genero genero) {
         if (generoRepository.existsById(id)) {
-            genero.setIdGenero(id);
+            genero.setIdGenero(id.intValue());
             return generoRepository.save(genero);
         }
         return null;
