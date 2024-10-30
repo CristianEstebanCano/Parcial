@@ -1,7 +1,7 @@
-package com.example.ProyectoAlmacen.Controller;
+package com.example.Parcial.Controller;
 
-import com.example.ProyectoAlmacen.Model.Libro;
-import com.example.ProyectoAlmacen.Service.LibroService;
+import com.example.Parcial.Model.Libro;
+import com.example.Parcial.Service.LibroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;

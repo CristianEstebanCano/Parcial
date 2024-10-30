@@ -1,6 +1,6 @@
-package com.example.ProyectoAlmacen.Repository;
+package com.example.Parcial.Repository;
 
-import com.example.ProyectoAlmacen.Model.Prestamo;
+import com.example.Parcial.Model.Prestamo;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PrestamoRepository extends JpaRepository<Prestamo, Long> {

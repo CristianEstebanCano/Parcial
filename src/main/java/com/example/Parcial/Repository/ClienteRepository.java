@@ -1,6 +1,6 @@
-package com.example.ProyectoAlmacen.Repository;
+package com.example.Parcial.Repository;
 
-import com.example.ProyectoAlmacen.Model.Cliente;
+import com.example.Parcial.Model.Cliente;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {

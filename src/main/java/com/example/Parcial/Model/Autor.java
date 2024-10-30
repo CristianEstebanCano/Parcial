@@ -1,4 +1,4 @@
-package com.example.ProyectoAlmacen.Model;
+package com.example.Parcial.Model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

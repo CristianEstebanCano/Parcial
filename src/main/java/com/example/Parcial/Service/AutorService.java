@@ -1,7 +1,7 @@
-package com.example.ProyectoAlmacen.Service;
+package com.example.Parcial.Service;
 
-import com.example.ProyectoAlmacen.Model.Autor;
-import com.example.ProyectoAlmacen.Repository.AutorRepository;
+import com.example.Parcial.Model.Autor;
+import com.example.Parcial.Repository.AutorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;

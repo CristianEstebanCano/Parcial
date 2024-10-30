@@ -1,4 +1,4 @@
-package com.example.ProyectoAlmacen;
+package com.example.Parcial;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
