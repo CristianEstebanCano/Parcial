@@ -38,4 +38,9 @@ public class PrestamoController {
     public boolean borrar(@PathVariable Long id) {
         return prestamoService.borrar(id);
     }
+
+    @GetMapping("/cliente/{idCliente}/libros")
+    public List<Object[]> obtenerLibrosPrestadosPorCliente(@PathVariable Long idCliente) {
+        return prestamoService.obtenerLibrosPrestadosPorCliente(idCliente);
+    }
 }

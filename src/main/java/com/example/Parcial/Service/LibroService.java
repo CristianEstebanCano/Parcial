@@ -40,4 +40,8 @@ public class LibroService {
         }
         return false;
     }
+
+    public List<Object[]> obtenerLibrosPorGenero(Long idGenero) {
+        return libroRepository.findBooksByGenre(idGenero);
+    }
 }

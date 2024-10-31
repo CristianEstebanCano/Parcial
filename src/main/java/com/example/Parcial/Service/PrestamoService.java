@@ -40,4 +40,8 @@ public class PrestamoService {
         }
         return false;
     }
+
+    public List<Object[]> obtenerLibrosPrestadosPorCliente(Long idCliente) {
+        return prestamoRepository.findBooksBorrowedByClient(idCliente);
+    }
 }

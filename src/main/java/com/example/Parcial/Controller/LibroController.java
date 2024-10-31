@@ -38,4 +38,9 @@ public class LibroController {
     public boolean borrar(@PathVariable Long id) {
         return libroService.borrar(id);
     }
+
+    @GetMapping("/genero/{idGenero}")
+    public List<Object[]> obtenerLibrosPorGenero(@PathVariable Long idGenero) {
+        return libroService.obtenerLibrosPorGenero(idGenero);
+    }
 }
